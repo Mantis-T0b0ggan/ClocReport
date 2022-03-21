@@ -2,10 +2,12 @@
 CLOC report for Checkmarx 
 # CLOC Report 
 
-This project was created for technical review by checkmarx interview team. The program is intended to receive Github URL input, run CLOC (Count Lines of Code) 
+- This project was created for technical review by checkmarx interview team. The program is intended to receive Github URL input, run CLOC (Count Lines of Code) 
 on a GitHub Repo and e-mail the report as a .CSV file to a given e-mail.
-Project currently only support Gmail e-mail accounts
-Project is still currently under construction - some code needs to be changed/added in order for the proram to work correctly. Any comments or suggestions are welcome!
+
+- Project currently only support Gmail e-mail accounts
+- Project is still currently under construction - some code needs to be changed/added in order for the proram to work correctly. Any comments or suggestions are welcome!
+- Need to add additional input confirmation to ensure both e-mail and Github URL are input correctly and send error messages to the user when input is incorrect
 
 ## Getting Started
 
