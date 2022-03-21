@@ -19,7 +19,7 @@ gitUrl = ''
 
 
 
-# 
+# Defining the function to automatically send the Cloc report via e-mail
 def sendEmail():
 	subject = f('CLOC report of repository {repoName}')
 	
@@ -42,7 +42,7 @@ def sendEmail():
 		server.login(fromEmail, password)
 		server.sendmail(fromEmail, toEmail, message.as_string())
 
-
+# Defining function to pull the given Github Repository
 def pullRepo():
 	repo = repoName()
 	if not os.path.exists(curDirectory+repo):
@@ -56,11 +56,11 @@ def pullRepo():
 	proc = subprocess.Popen([binDirectory+clocExe,curDirectory+repo, "--csv","--out", clocReport , "--quiet"], stdout=subprocess.PIPE)
 	proc.stdout.read()
 
-
+# Getting the Repository name automatically from the Repo URL
 def repoName():
 	return(gitUrl[gitUrl.rfind('/') + 1:gitUrl.rfind('.')])
 
-
+# Confirming input matches a correct e-mail address
 def confirm_input():
 	if(re.fullmatch(reg_ex, toEmail)):
 		print("Valid Email")
@@ -69,7 +69,7 @@ def confirm_input():
 		print("Invalid Email")
 
 
-
+#Running the program
 confirm_input()	
 clocReport = repoName() + branch + ".csv"	
 pullRepo()
